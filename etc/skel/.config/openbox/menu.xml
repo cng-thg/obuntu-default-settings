@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+    <menu id="root-menu" label="Openbox 3">
+
+		<item label="Run Program">
+			<action name="Execute">
+				<execute>gmrun</execute>
+			</action>
+		</item>
+
+		<separator />
+
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>x-terminal-emulator</execute>
+			</action>
+		</item>
+
+		<item label="Web Browser">
+			<action name="Execute">
+				<execute>x-www-browser</execute>
+			</action>
+		</item>
+
+		<item label="File Manager">
+			<action name="Execute">
+				<execute>thunar</execute>
+			</action>
+		</item>
+
+		<item label="Text Editor">
+			<action name="Execute">
+				<execute>geany</execute>
+			</action>
+		</item>
+
+		<item label="Media Player">
+			<action name="Execute">
+				<execute>gnome-mplayer</execute>
+			</action>
+		</item>
+
+		<separator />
+
+		<item label="Wallpapers">
+			<action name="Execute">
+				<execute>
+					nitrogen /usr/share/backgrounds/
+				</execute>
+			</action>
+		</item>
+        
+        <menu id="graphicsScreenshots" label="Take Screenshot">
+            <item label="Now">
+                <action name="Execute">
+                    <execute>
+                        scrot '%Y-%m-%d_$wx$h--%s.jpg'
+                    </execute>
+                </action>
+            </item>
+            <item label="In 5 Seconds...">
+                <action name="Execute">
+                    <execute>
+                        scrot -d 5 '%Y-%m-%d_$wx$h--%s.jpg'
+                    </execute>
+                </action>
+            </item>
+            <item label="In 10 Seconds...">
+                <action name="Execute">
+                    <execute>
+                        scrot -d 10 '%Y-%m-%d_$wx$h--%s.jpg'
+                    </execute>
+                </action>
+            </item>
+        </menu>
+
+        <menu id="obConfig" label="Openbox">
+            <item label="OBconf">
+                <action name="Execute">
+                    <execute>obconf</execute>
+                </action>
+            </item>
+
+            <item label="Edit menu.xml">
+                <action name="Execute">
+                    <execute>geany ~/.config/openbox/menu.xml</execute>
+                </action>
+            </item>
+            <item label="Edit rc.xml">
+                <action name="Execute">
+                    <execute>geany ~/.config/openbox/rc.xml</execute>
+                </action>
+            </item>
+            <item label="Edit autostart">
+                <action name="Execute">
+                    <execute>geany ~/.config/openbox/autostart</execute>
+                </action>
+            </item>
+
+			<separator/>
+
+            <item label="Reconfigure">
+                <action name="Reconfigure"/>
+            </item>
+            <item label="Restart">
+                <action name="Restart"/>
+            </item>
+        </menu>
+        <separator />
+
+		<item label="Exit">
+			<action name="Execute">
+				<execute>/usr/share/madbox/madbox-logout</execute>
+			</action>
+		</item>
+		<item label="Logout">
+			<action name="Exit" />
+		</item>
+
+    </menu>
+</openbox_menu>
